@@ -1,0 +1,102 @@
+/*to find the area of a triangle*/
+#include<stdio.h>
+#include<math.h>
+float area(int a, int b, int c)
+{
+  float s=(a+b+c)/2;
+  float area=sqrt(s*(s-a)*(s-b)*(s-c));
+  return area;
+}
+
+void main()
+{
+  int a,b,c;
+  printf("enter 3  sides of triangle \n");
+  scanf("%d %d %d",&a,&b,&c);
+  printf("the area of the triangle is %f",area(a,b,c));
+  getch();
+}
+
+
+/* to find the roots of a quadratic equation */
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+    int a, b, c, disc;
+    float r1, r2, real, imag;
+    clrscr();
+    printf(" enter the coefficients of a quadratic equation of the form ax^2+bx+c \n");
+    scanf("%d %d %d",&a,&b,&c);
+    disc=((b*b)-(4*a*c));
+    if (disc<0)
+    {
+        real=-b/(2.0*a);
+        imag=sqrt(-disc)/(2*a);
+        printf("Imaginary roots of the form %f+i%f and %f-i%f",real,imag,real,imag);
+    }
+    else if (disc=0)
+    {
+        r1=r2=-b/(2*a);
+        printf("roots are are real and equal, value is %f",r1);
+    }
+    else
+    {
+	r1=(-b+sqrt(disc))/(2*a);
+	r2=(-b-sqrt(disc))/(2*a);
+	printf(" the roots are %f and %f", r1, r2);
+    }
+    getch();
+}
+
+
+/*to find the average of 3 numbers*/
+#include<stdio.h>
+#include<conio.h>
+float avg(int a, int b, int c)
+{
+    return ((a+b+c)/3);
+}
+void main()
+{
+    int a, b, c;
+    printf("enter 3 numbers \n");
+    scanf("%d %d %d", &a, &b, &c);
+    printf("the average of the numbers is %f", avg(a,b,c));
+    getch();
+}
+
+
+/*to find the smallest of 3 numbers*/
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+     int a, b, c, sml;
+     sml=0;
+     printf("enter 3 numbers\n");
+     scanf("%d %d %d",&a,&b,&c);
+     if(a<=b)
+     {
+     	if(b<=c)
+            sml=a;
+        else if(c<=a)
+            sml=c;
+     }
+     else 
+     {
+        if(c>=b)
+            sml=b;
+        else
+            sml=c;
+     }
+     printf("the smallest number is %d",sml);
+     getch();
+}
+        	
+            
+
+
+
+
