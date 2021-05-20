@@ -33,18 +33,18 @@ void main()
     if (disc<0)
     {
         real=-b/(2.0*a);
-        imag=sqrt(-disc)/(2*a);
+        imag=sqrt(-disc)/(2.0*a);
         printf("Imaginary roots of the form %f+i%f and %f-i%f",real,imag,real,imag);
     }
     else if (disc=0)
     {
-        r1=r2=-b/(2*a);
+        r1=r2=-b/(2.0*a);
         printf("roots are are real and equal, value is %f",r1);
     }
     else
     {
-	r1=(-b+sqrt(disc))/(2*a);
-	r2=(-b-sqrt(disc))/(2*a);
+	r1=(-b+sqrt(disc))/(2.0*a);
+	r2=(-b-sqrt(disc))/(2.0*a);
 	printf(" the roots are %f and %f", r1, r2);
     }
     getch();
@@ -56,7 +56,7 @@ void main()
 #include<conio.h>
 float avg(int a, int b, int c)
 {
-    return ((a+b+c)/3);
+    return ((a+b+c)/3.0);
 }
 void main()
 {
