@@ -21,7 +21,7 @@ void main()
 /* to find total number of minutes*/
 #include<stdio.h>
 #include<conio.h>
-int min(int hr, int min)
+int minutes(int hr, int min)
 {
      min+=(hr*60);
      return min;
@@ -29,9 +29,9 @@ int min(int hr, int min)
 void main()
 { 
     int hr, min;
-    printf(" enter time in hours and minutes in "hr min" format");
+    printf(" enter time in hours and minutes \n");
     scanf("%d%d",&hr,&min);
-    printf(" the total time in minutes is %d", min(hr,min));
+    printf(" the total time in minutes is %d", minutes(hr,min));
     getch();
 }
 
