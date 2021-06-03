@@ -1,0 +1,66 @@
+/*to find sum of digits of a number*/
+#include<stdio.h>
+
+void main()
+{
+   int dig,sum,num;
+   sum=0;
+   printf("enter the number\n");
+   scanf("%d",&num);
+   while(num!=0)
+   {
+       dig=num%10;
+       sum+=dig;
+       num/=10;
+   }
+   printf("the sum of digits is %d \n",sum);
+   getch();
+}
+
+   
+/*to find the multiples of a given number between 1 to 100*/
+#include<stdio.h>
+void main()
+{
+    int num, i;
+    printf("\nenter number between 1 and 100\n");
+    scanf("%d",&num);
+    if(num<1 || num>100)
+       printf("not possible\n");
+    else
+    {
+       printf("multiples of number between 1 and 100 are\n");
+       for(i=num;i<=100;i+=num)
+       {
+	  printf("%d ",i);
+       }
+    }
+    getch();
+ }
+ 
+ 
+ /* to print even numbers between m and n */
+#include<stdio.h>
+ 
+void main()
+{
+     int m, n, i;
+     printf("\nenter the values of m and n\n");
+     scanf("%d%d",&m,&n);
+     if(m>n)
+	printf("not possible\n");
+     else
+	printf("the even numbers between m and n are\n");
+     if(m%2==0)
+        i=m;
+     else 
+	i=m+1;
+     for(;i<=n;i+=2)
+     {    
+         printf("%d ",i);
+     }
+     getch();
+}
+ 
+
+ 
