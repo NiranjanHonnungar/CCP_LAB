@@ -1,4 +1,4 @@
-/*to find the sum of first n odd numbers*/
+/*to find the sum of squares of first n odd numbers*/
 #include<stdio.h>
 void main()
 {
