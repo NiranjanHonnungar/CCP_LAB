@@ -1,0 +1,104 @@
+/* to add matrices */
+#include<stdio.h>
+
+void main()
+{
+    int A[10][10], B[10][10];
+    int sum[10][10]={0};
+    int row1, col1, row2, col2, row_sum, col_sum, i,j;
+    printf("enter number of rows of arr 1 and arr 2\n");
+    scanf("%d%d",&row1,&row2);
+    printf("enter number of cols of arr 1 and arr 2\n");
+    scanf("%d%d",&col1,&col2);
+    if( row1!=row2 || col1!=col2)
+    {
+	printf("have to be of same order");
+	exit();
+    }
+    row_sum=row1;
+    col_sum=col1;
+    printf("the first matrix is\n");
+    for(i=0;i<row1;i++)
+       for(j=0;j<col1;j++)
+	  scanf("%d",&A[i][j]);
+    printf("the second matrix is \n");
+    for(i=0;i<row2;i++)
+       for(j=0;j<col2;j++)
+	  scanf("%d",&B[i][j]);
+    for(i=0;i<row_sum;i++)
+       for(j=0;j<col_sum;j++)
+         sum[i][j]=A[i][j]+B[i][j];
+    printf("the addition of these matrices is\n");
+    for(i=0;i<row_sum;i++)
+    {
+       for(j=0;j<col_sum;j++)
+	   printf("%d ",sum[i][j]);
+       printf("\n");
+    }
+    getch();
+}
+
+
+/* to find the highest marks in each subject */
+#include<stdio.h>
+ 
+void main()
+{
+   int subj[5][5], subj_max[5];
+   int i, j, max;
+   printf("\nenter marks in 3 subjects\n");
+   for(i=0;i<4;i++)
+   {
+      printf("Student %d \n",(i+1));
+      for(j=0;j<3;j++)
+	scanf("%d",&subj[i][j]);
+   }
+   printf("the array of marks is\n");
+   for(i=0;i<4;i++)
+   {
+      for(j=0;j<3;j++)
+        printf("%d ",subj[i][j]);
+      printf("\n");
+   }
+   for(j=0;j<3;j++)
+   {
+      max=subj[0][j];
+      for(i=0;i<4;i++)
+         if(subj[i][j]>max)
+            max=subj[i][j];
+      subj_max[j]=max;
+   }
+   printf("the max marks in the subjects are\n");
+   for(i=0;i<3;i++)
+     printf("%d ", subj_max[i]);
+   getch();
+}
+
+
+/* to transpose the given matrix */
+#include<stdio.h>
+
+void main()
+{
+   int i, j, row, col;
+   int A[10][10], Trans_A[10][10];
+   printf("enter number of rows and cols\n");
+   scanf("%d%d",&row,&col);
+   printf("the matrix is \n");
+   for(i=0;i<row;i++)
+      for(j=0;j<col;j++)
+      {
+          scanf("%d",&A[i][j]);
+          Trans_A[j][i]=A[i][j];
+      }
+   printf("the transposed matrix is\n");
+   for(i=0;i<col;i++)
+   {
+      for(j=0;j<row;j++) 
+	  printf("%d ",Trans_A[i][j]);
+      printf("\n");
+   }
+   getch();
+
+}
+
