@@ -1,0 +1,127 @@
+/*to find student with highest marks*/
+#include<stdio.h>
+struct stud
+{
+    int r_no;
+    char name[20];
+    char sec;
+    char dept[30];
+    float fees;
+    int result;
+}s1, s2, high;
+void main()
+{
+   printf("enter roll no, name, sec, dept, fees and result of students\n");
+   printf("student 1\n");
+   scanf("%d %s %c %s %f %d",&s1.r_no,&s1.name,&s1.sec,&s1.dept,&s1.fees,&s1.result);
+   printf("student 2\n");
+   scanf("%d %s %c %s %f %d",&s2.r_no,&s2.name,&s2.sec,&s2.dept,&s2.fees,&s2.result);
+   if(s1.result>s2.result)
+   {
+       high=s1;
+   }
+   else
+   {
+       high=s2;
+   }
+   printf("highest scorer is\n");
+   printf("roll_no :%d\n",high.r_no);
+   printf("name :%s\n",high.name);
+   printf("sec :%c\n",high.sec);
+   printf("dept :%s\n",high.dept);
+   printf("fees :%f\n",high.fees);
+   printf("result :%d\n",high.result);
+   getch();
+}
+
+
+/*to do arithmetic operations using pointers*/
+#include<stdio.h>
+void main()
+{
+   int *a,*b;
+   printf("enter a and b\n");
+   scanf("%d%d",a,b);
+   printf("addition :%d\n",*a+*b);
+   printf("subtraction :%d\n",*a-*b);
+   printf("multiplication :%d\n",(*a)*(*b));
+   printf("division :%d\n",(*a)/(*b));
+   printf("remainder :%d\n",(*a)%(*b));
+   getch();
+}
+
+  
+/*to print details of book with high price*/
+#include<stdio.h>
+struct book
+{
+    char title[30];
+    char auth[20];
+    float pri;
+    int pg_no;
+    char pub_date[20];
+}b1,b2,b3,high;
+void main()
+{  
+    printf("Enter the book details: Author,title,price,number of pages,date of publication\n");
+    printf("book 1\n");
+    scanf("%s %s %f %d %s",&b1.auth,&b1.title,&b1.pri,&b1.pg_no,&b1.pub_date);
+    printf("book 2\n");
+    scanf("%s %s %f %d %s",&b2.auth,&b2.title,&b2.pri,&b2.pg_no,&b2.pub_date);
+    printf("book 3\n");
+    scanf("%s %s %f %d %s",&b3.auth,&b3.title,&b3.pri,&b3.pg_no,&b3.pub_date);
+    if(b1.pri>=b2.pri && b1.pri>=b3.pri)
+       high=b1;
+    else if(b2.pri>=b1.pri && b2.pri>=b3.pri)
+       high=b2;
+    else
+       high=b3;
+    printf("the highest price book details are\n");
+    printf("Author=%s\nTitle=%s\nprice=%f\nNumber of pages=%d\nDate of publication=%s\n",high.auth,high.title,high.pri,high.pg_no,high.pub_date);
+    getch();
+}
+
+
+/*to swap using pointer*/
+#include<stdio.h>
+void swap(int *x,int *y)
+{
+   int t;
+   t = *x;
+   *x = *y;
+   *y = t;
+}
+void main()
+{
+   int a,b;
+   printf("enter numbers a and b\n");
+   scanf("%d%d",&a,&b);
+   printf("before swap a=%d b=%d\n",a,b);
+   swap(&a,&b);
+   printf("after swap a=%d b=%d\n",a,b);
+   getch();
+}
+
+
+/*to open and close file*/
+#include<stdio.h>
+void main()
+{
+    char str[100],c;
+    FILE *fp;
+    fp=fopen("BMSCE.txt","w");
+    printf("Enter file info\n");
+    fgets(str,100,stdin);
+    fclose(fp);
+    printf("Output\n");
+    fp=fopen("BMSCE.txt","r");
+    if(fp== NULL)
+    {
+       printf("Error");
+       exit(1);
+    }
+    fgets(str,100,fp);
+    printf("%s\n",str);
+    fclose(fp);
+    getch();
+}
