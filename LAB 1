@@ -14,7 +14,6 @@ void main()
     else
       printf("a is equal to b\n");
     getch();
-    getch();
 }
 
 
